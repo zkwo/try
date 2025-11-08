@@ -1,0 +1,60 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+  /* Palet Monokrom */
+  --color-dark: #1a1a1a;
+  --color-light: #f0f0f0;
+  --color-accent: #808080; /* Abu-abu untuk detail dan hover */
+  --color-text: #ffffff; 
+  
+  /* Latar Belakang & Kaca (Glassmorphism Core) */
+  --bg-main: #121212; /* Background utama gelap */
+  --glass-bg: rgba(255, 255, 255, 0.1); /* Putih transparan untuk efek blur */
+  --glass-border: rgba(255, 255, 255, 0.2); /* Border kaca */
+}
+
+/* Reset dan Styling Dasar */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg-main);
+  color: var(--color-text);
+  min-height: 100vh;
+  /* Gradien latar belakang agar efek kaca terlihat nyata */
+  background: radial-gradient(circle at top left, #333333 0%, #121212 50%, #0a0a0a 100%);
+  background-attachment: fixed;
+  line-height: 1.6;
+}
+
+/* Styling Link Global */
+a {
+  color: var(--color-light);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+/* Utility Class */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  color: var(--color-light);
+}
+
+p {
+  color: #ccc;
+}
