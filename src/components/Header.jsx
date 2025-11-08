@@ -1,24 +1,31 @@
-// src/components/Header.jsx
+// src/components/Header.jsx (Revisi)
 import React from 'react';
-import GlassCard from './GlassCard';
+
+// Styling Glassmorphism diterapkan langsung ke elemen header
+const headerStyle = {
+  background: 'rgba(18, 18, 18, 0.95)', /* Background hampir gelap total */
+  backdropFilter: 'blur(10px)', /* Efek blur untuk Glassmorphism */
+  WebkitBackdropFilter: 'blur(10px)',
+  position: 'sticky',
+  top: '0',
+  zIndex: 10,
+  padding: '15px 0', /* Padding vertikal yang lebih sedikit */
+  borderBottom: '1px solid rgba(255, 255, 255, 0.1)' /* Border tipis di bawah */
+};
+
+const navContainerStyle = {
+  maxWidth: '1000px',
+  margin: '0 auto',
+  padding: '0 20px',
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+};
 
 const Header = () => {
   return (
-    <GlassCard 
-      className="header-nav" 
-      style={{ 
-        padding: '15px 30px', 
-        borderRadius: '0 0 16px 16px', 
-        position: 'sticky', /* Menjaga header tetap di atas */
-        top: '0', 
-        zIndex: 10,
-        margin: '0 auto',
-        width: '100%',
-        maxWidth: '1000px', /* Sesuaikan dengan container */
-        backgroundColor: 'rgba(18, 18, 18, 0.9)' /* Background sedikit lebih gelap untuk menonjol */
-      }}
-    >
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+    <header style={headerStyle}>
+      <div style={navContainerStyle}>
         <a href="#hero" style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>
           MyMonochrome.Dev
         </a>
@@ -28,7 +35,7 @@ const Header = () => {
           <a href="#contact" style={{ marginLeft: '25px', fontSize: '1.1rem' }}>Contact</a>
         </nav>
       </div>
-    </GlassCard>
+    </header>
   );
 };
 
